@@ -376,7 +376,7 @@ func ReadTest(d *schema.ResourceData, meta interface{}) error {
 	d.Set("branding", testResp.Branding)
 	d.Set("virus", testResp.Virus)
 	d.Set("real_browser", testResp.RealBrowser)
-	d.Set("RealBrowser", testResp.TestTags)
+	d.Set("test_tags", testResp.TestTags)
 
 	return nil
 }
