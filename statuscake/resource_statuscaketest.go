@@ -332,7 +332,12 @@ func ReadTest(d *schema.ResourceData, meta interface{}) error {
 		return fmt.Errorf("Error Getting StatusCake Test Details for %s: Error: %s", d.Id(), err)
 	}
 
-	d.Set("contact_id", testResp.ContactID)
+	if v, ok := d.GetOk("contact_group"); ok {
+		d.Set("contact_group", v)
+	} else if v, ok := d.GetOk("contact_id"); ok {
+		d.Set("contact_id", v)
+	}
+
 	d.Set("contact_group", testResp.ContactGroup)
 	d.Set("website_name", testResp.WebsiteName)
 	d.Set("website_url", testResp.WebsiteURL)
