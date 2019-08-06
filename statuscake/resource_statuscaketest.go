@@ -337,6 +337,8 @@ func ReadTest(d *schema.ResourceData, meta interface{}) error {
 	} else if v, ok := d.GetOk("contact_id"); ok {
 		d.Set("contact_id", v)
 	}
+
+	d.Set("contact_group", testResp.ContactGroup)
 	d.Set("website_name", testResp.WebsiteName)
 	d.Set("website_url", testResp.WebsiteURL)
 	d.Set("check_rate", testResp.CheckRate)
@@ -362,10 +364,19 @@ func ReadTest(d *schema.ResourceData, meta interface{}) error {
 	d.Set("do_not_find", testResp.DoNotFind)
 	d.Set("status_codes", testResp.StatusCodes)
 	d.Set("use_jar", testResp.UseJar)
+	d.Set("user_agent", testResp.UserAgent)
 	d.Set("post_raw", testResp.PostRaw)
 	d.Set("final_endpoint", testResp.FinalEndpoint)
 	d.Set("enable_ssl_alert", testResp.EnableSSLAlert)
 	d.Set("follow_redirect", testResp.FollowRedirect)
+	d.Set("ping_url", testResp.PingURL)
+	d.Set("basic_user", testResp.BasicUser)
+	d.Set("basic_pass", testResp.BasicPass)
+	d.Set("public", testResp.Public)
+	d.Set("branding", testResp.Branding)
+	d.Set("virus", testResp.Virus)
+	d.Set("real_browser", testResp.RealBrowser)
+	d.Set("test_tags", testResp.TestTags)
 
 	return nil
 }
