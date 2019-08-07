@@ -369,15 +369,7 @@ func ReadTest(d *schema.ResourceData, meta interface{}) error {
 	d.Set("final_endpoint", testResp.FinalEndpoint)
 	d.Set("enable_ssl_alert", testResp.EnableSSLAlert)
 	d.Set("follow_redirect", testResp.FollowRedirect)
-	d.Set("ping_url", testResp.PingURL)
-	d.Set("basic_user", testResp.BasicUser)
-	d.Set("basic_pass", testResp.BasicPass)
-	d.Set("public", testResp.Public)
-	d.Set("branding", testResp.Branding)
-	d.Set("virus", testResp.Virus)
-	d.Set("real_browser", testResp.RealBrowser)
 	d.Set("test_tags", testResp.TestTags)
-
 	return nil
 }
 
