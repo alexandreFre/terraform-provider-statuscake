@@ -24,8 +24,11 @@ func Provider() terraform.ResourceProvider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"statuscake_test": resourceStatusCakeTest(),
-			"statuscake_ssl":  resourceStatusCakeSsl(),
+
+			"statuscake_ssl":           resourceStatusCakeSsl(),
+			"statuscake_test":          resourceStatusCakeTest(),
+			"statuscake_contact_group": resourceStatusCakeContactGroup(),
+>>>>>>> 0b957cd46a2a3a209c45778da2a7e1e55a94f3c7
 		},
 
 		ConfigureFunc: providerConfigure,
